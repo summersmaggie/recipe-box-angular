@@ -7,7 +7,7 @@ import { Recipe } from '../models/recipe.model'
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent  {
-  @Input() childRecipeList: Recipe[];
+  @Input() childRecipesList: Recipe[];
   @Output() clickSender = new EventEmitter();
   show: number;
   myVar = false;
@@ -17,12 +17,10 @@ export class RecipeListComponent  {
   }
 
   toggleShow(i) {
-    //click on new recipeToEdit
     if (i !== this.show) {
       this.show = i;
       this.myVar = true;
     } else {
-      //click on same recipe again
       if (this.myVar === false) {
         this.myVar = true;
     } else {
