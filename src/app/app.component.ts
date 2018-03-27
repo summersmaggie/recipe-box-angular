@@ -8,16 +8,17 @@ import { Recipe } from './models/recipe.model'
 })
 
 export class AppComponent {
-  currentRecipe: string = 'Pizza';
-  recipes: Recipe[] = [
+  selectedRecipe: null;
+  masterRecipeList: Recipe[] = [
     new Recipe('Quesdilla', 'bake at 425', ['cheese, rice']),
     new Recipe('Mashed Potatoes', 'mash potatoes', ['potatoes, butter, cheese, sour cream']),
     new Recipe('Pop Tart', 'bake stuff', ['strawberries'])
   ];
 
-  selectedRecipe: null;
+
   editRecipe(clickedRecipe) {
     this.selectedRecipe = clickedRecipe;
+    console.log(clickedRecipe);
   }
 
   finishedEditing() {

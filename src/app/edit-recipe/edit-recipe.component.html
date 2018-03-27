@@ -1,0 +1,12 @@
+<div *ngIf="selectedRecipe">
+  <h3>{{selectedRecipe.title}}</h3>
+  <label>Enter Recipe Title:</label>
+  <input [(ngModel)]="selectedRecipe.title">
+  <h3>{{selectedRecipe.description}}</h3>
+  <label>Enter Task Description:</label>
+  <input [(ngModel)]="selectedRecipe.description">
+  <h3>{{selectedRecipe.ingredients}}</h3>
+  <label>Enter Recipe Ingredients:</label>
+  <input [(ngModel)]="selectedRecipe.ingredients">
+  <button (click)="finishedEditing()">Done</button>
+</div>
