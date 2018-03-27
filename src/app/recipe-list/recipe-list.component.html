@@ -1,3 +1,17 @@
-<ul>
-  <li *ngFor="let currentRecipe of childRecipeList" >{{currentRecipe.title}}<button (click)="editButtonClicked(currentRecipe)">Edit!</button></li>
-</ul>
+<div class="card">
+  <div class="card-body">
+    <h2 class="card-title">Your current recipes: </h2>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" *ngFor="let recipe of childRecipesList; let i = index"><b><h4 (click)="toggleShow(i)">{{recipe.title}}</h4></b><br><img src="{{recipe.image}}" class="img-fluid"><br><button (click)="editButtonClicked(recipe)">Edit This Recipe</button>
+        <div *ngIf="show === i && myVar === true">
+          <ul>
+            <li><i>Description:</i> {{recipe.description}}</li>
+            <li><i>Ingredients:</i> {{recipe.ingredients}}</li>
+            <li><i>Instructions:</i> {{recipe.instructions}}</li>
+            <li><i>Tags:</i> {{recipe.tags}}</li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

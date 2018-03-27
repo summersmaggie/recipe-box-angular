@@ -9,9 +9,25 @@ import { Recipe } from '../models/recipe.model'
 export class RecipeListComponent  {
   @Input() childRecipeList: Recipe[];
   @Output() clickSender = new EventEmitter();
+  show: number;
+  myVar = false;
 
   editButtonClicked(recipeToEdit: Recipe) {
-  this.clickSender.emit(recipeToEdit);
+    this.clickSender.emit(recipeToEdit);
   }
 
+  toggleShow(i) {
+    //click on new recipeToEdit
+    if (i !== this.show) {
+      this.show = i;
+      this.myVar = true;
+    } else {
+      //click on same recipe again
+      if (this.myVar === false) {
+        this.myVar = true;
+    } else {
+      this.myVar = false;
+      }
+    }
+  }
 }
