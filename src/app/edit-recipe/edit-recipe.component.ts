@@ -7,13 +7,8 @@ import { Recipe } from '../models/recipe.model';
   styleUrls: ['./edit-recipe.component.css']
 })
 export class EditRecipeComponent {
-  @Input() selectedRecipe: Recipe;
-  @Output() clickSender = new EventEmitter();
+  @Input() childSelectedRecipe: Recipe;
   @Output() clickedDone = new EventEmitter();
-
-  editButtonClicked(recipeToEdit: Recipe) {
-    this.clickSender.emit(recipeToEdit);
-  }
 
   finishedEditing() {
     this.clickedDone.emit();
